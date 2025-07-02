@@ -3,94 +3,220 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
+    <title> Horizon - Inspired Demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+      body { font-family: 'Montserrat', Arial, sans-serif; }
+    </style>
   </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
+  <body class="bg-gradient-to-b from-teal-100 via-white to-orange-100 text-gray-800 w-full min-h-screen">
+    <!-- NAVBAR -->
+    <div class="w-full bg-white/90 backdrop-blur-md flex items-center justify-between px-4 md:px-8 py-3 sticky top-0 z-10 shadow-md">
+      <div class="flex items-center font-bold text-lg tracking-wide text-teal-700">
+        <img src="public/images/logo.jpg" alt="Horizon Logo" class="h-9 mr-3 rounded-full shadow" />
+        Horizon
+      </div>
+      <nav class="hidden md:flex gap-6">
+        <a href="#" class="hover:text-teal-600 transition">Dive Centers</a>
+        <a href="#" class="hover:text-teal-600 transition">Dive Courses</a>
+        <a href="#" class="hover:text-teal-600 transition">Fun Dives</a>
+        <a href="#" class="hover:text-teal-600 transition">Cruise</a>
+        <a href="#" class="hover:text-teal-600 transition">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <select class="bg-orange-100 text-orange-700 rounded px-2 py-1 text-sm border border-orange-200">
+          <option>EN</option>
+          <option>ID</option>
+        </select>
+        <select class="bg-orange-100 text-orange-700 rounded px-2 py-1 text-sm border border-orange-200">
+          <option>EUR</option>
+          <option>USD</option>
+        </select>
+        <button class="bg-gradient-to-r from-orange-300 to-orange-200 text-teal-700 font-bold rounded px-4 py-2 ml-2 shadow hover:from-orange-400 hover:to-orange-300 transition">Book Now</button>
+      </div>
+    </div>
+    <!-- HERO SLIDER -->
+    <section class="w-full min-h-[60vh] flex flex-col items-center justify-center text-center px-4 py-8 md:py-16 bg-gradient-to-br from-teal-100 via-white to-orange-100 relative">
+      <div id="slider" class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl">
+        <div class="relative h-[320px] md:h-[480px]">
+          <div class="slider-image absolute inset-0 transition-opacity duration-700 opacity-100" style="z-index:2;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Slide 1" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-teal-900/60 to-transparent p-6 text-left ">
+              <h2 class="text-2xl md:text-4xl font-bold text-orange-400 mb-2 drop-shadow">Explore Horizon's Underwater Wonders</h2>
+              <p class="text-white text-lg drop-shadow">Fun dives, day trips, and courses for all levels!</p>
+            </div>
+          </div>
+          <div class="slider-image absolute inset-0 transition-opacity duration-700 opacity-0" style="z-index:1;">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80" alt="Slide 2" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-teal-900/60 to-transparent p-6 text-left ">
+              <h2 class="text-2xl md:text-4xl font-bold text-orange-400 mb-2 drop-shadow">Meet Majestic Marine Life</h2>
+              <p class="text-white text-lg drop-shadow">Swim with manta rays, turtles, and more.</p>
+            </div>
+          </div>
+          <div class="slider-image absolute inset-0 transition-opacity duration-700 opacity-0" style="z-index:1;">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" alt="Slide 3" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-teal-900/60 to-transparent p-6 text-left ">
+              <h2 class="text-2xl md:text-4xl font-bold text-orange-400 mb-2 drop-shadow">Start Your Diving Adventure</h2>
+              <p class="text-white text-lg drop-shadow">Book your unforgettable experience today!</p>
+            </div>
+          </div>
+          <!-- Arrows -->
+          <button id="prevSlide" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-teal-200 text-teal-700 rounded-full w-10 h-10 flex items-center justify-center z-10 shadow"><i class="fas fa-chevron-left"></i></button>
+          <button id="nextSlide" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-teal-200 text-teal-700 rounded-full w-10 h-10 flex items-center justify-center z-10 shadow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 my-2">
+        <button class="slider-dot w-3 h-3 rounded-full bg-orange-400 opacity-80"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-teal-300 opacity-50"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-teal-300 opacity-50"></button>
+      </div>
+    </section>
+    <script>
+      const images = document.querySelectorAll('.slider-image');
+      const dots = document.querySelectorAll('.slider-dot');
+      let current = 0;
+      function showSlide(idx) {
+        images.forEach((img, i) => {
+          img.style.opacity = i === idx ? '1' : '0';
+          img.style.zIndex = i === idx ? '2' : '1';
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('bg-orange-400', i === idx);
+          dot.classList.toggle('bg-teal-300', i !== idx);
+          dot.classList.toggle('opacity-80', i === idx);
+          dot.classList.toggle('opacity-50', i !== idx);
+        });
+        current = idx;
+      }
+      document.getElementById('prevSlide').onclick = () => showSlide((current + images.length - 1) % images.length);
+      document.getElementById('nextSlide').onclick = () => showSlide((current + 1) % images.length);
+      dots.forEach((dot, i) => dot.onclick = () => showSlide(i));
+      // Auto-slide
+      setInterval(() => showSlide((current + 1) % images.length), 7000);
+      showSlide(0);
+    </script>
+    <!-- WHY US -->
+    <section class="w-full bg-white/80 py-12 px-4 text-center">
+      <div class="mx-auto mb-6 w-28 h-28 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-200 via-teal-100 to-white shadow-lg">
+        <img src="public/images/logo.jpg" alt="Logo" class="w-16 h-16 rounded-full shadow" />
+      </div>
+      <h2 class="text-2xl md:text-3xl font-bold text-teal-700 mb-2">Why  Horizon?</h2>
+      <p class="text-teal-700 text-lg mb-8">Experienced and multilingual staff, certificate of excellence, small groups, free nitrox, affordable prices, and more!</p>
+      <div class="flex flex-wrap justify-center gap-6 mb-8">
+        <div class="bg-teal-100 rounded-xl px-6 py-5 flex flex-col items-center shadow min-w-[140px] max-w-[200px] border border-teal-200">
+          <div class="text-3xl mb-2 text-teal-600"><i class="fas fa-user-tie"></i></div>
+          <span>Experienced Staff</span>
+        </div>
+        <div class="bg-teal-100 rounded-xl px-6 py-5 flex flex-col items-center shadow min-w-[140px] max-w-[200px] border border-teal-200">
+          <div class="text-3xl mb-2 text-teal-600"><i class="fas fa-certificate"></i></div>
+          <span>Certificate of Excellence</span>
+        </div>
+        <div class="bg-teal-100 rounded-xl px-6 py-5 flex flex-col items-center shadow min-w-[140px] max-w-[200px] border border-teal-200">
+          <div class="text-3xl mb-2 text-teal-600"><i class="fas fa-users"></i></div>
+          <span>Small Group</span>
+        </div>
+        <div class="bg-teal-100 rounded-xl px-6 py-5 flex flex-col items-center shadow min-w-[140px] max-w-[200px] border border-teal-200">
+          <div class="text-3xl mb-2 text-teal-600"><i class="fas fa-water"></i></div>
+          <span>FREE Nitrox</span>
+        </div>
+        <div class="bg-teal-100 rounded-xl px-6 py-5 flex flex-col items-center shadow min-w-[140px] max-w-[200px] border border-teal-200">
+          <div class="text-3xl mb-2 text-teal-600"><i class="fas fa-euro-sign"></i></div>
+          <span>Affordable Prices</span>
+        </div>
+      </div>
+      <div class="mx-auto max-w-lg bg-gradient-to-br from-teal-100 via-orange-100 to-white rounded-xl p-6 text-teal-700 text-base border border-teal-200">
+        <strong>Horizon Dive Centers:</strong> Pemuteran, Nusa Lembongan, Tulamben, Amed<br/>
+        <em class="text-teal-400">(Map placeholder)</em>
+      </div>
+    </section>
+    <!-- TESTIMONIALS -->
+    <section class="w-full bg-white  py-12 px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-orange-300 mb-8">Testimonials</h2>
+      <div class="flex flex-wrap gap-6 justify-center">
+        <div class="bg-[#232a36] rounded-xl px-6 py-5 shadow min-w-[220px] max-w-[320px] text-left">
+          <div class="text-orange-300 text-lg mb-2">★★★★★</div>
+          <div>Wonderful experience!<br/><small class="text-gray-300">"What a wonderful experience in Horizon diving! Without great training and nice team, I might not be so open water with sincere for intimate and I was lucky to have their best skills and tips."</small></div>
+          <div class="mt-4 text-gray-400 text-sm">- Sarah P.</div>
+        </div>
+        <div class="bg-[#232a36] rounded-xl px-6 py-5 shadow min-w-[220px] max-w-[320px] text-left">
+          <div class="text-orange-300 text-lg mb-2">★★★★★</div>
+          <div>Cruise Raja Ampat!<br/><small class="text-gray-300">"We enjoyed every bit of everything was well planned, service is 5 stars. The team was amazing."</small></div>
+          <div class="mt-4 text-gray-400 text-sm">- John W.</div>
+        </div>
+        <div class="bg-[#232a36] rounded-xl px-6 py-5 shadow min-w-[220px] max-w-[320px] text-left">
+          <div class="text-orange-300 text-lg mb-2">★★★★★</div>
+          <div>Extremely satisfied<br/><small class="text-gray-300">"The staff was professional and passionate, resulting in a memorable dive trip!"</small></div>
+          <div class="mt-4 text-gray-400 text-sm">- Mike L.</div>
+        </div>
+      </div>
+    </section>
+    <!-- COURSES -->
+    <section class="w-full bg-orange-50 py-12 px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-teal-700 mb-8">Check out our exciting Dive Courses in Horizon</h2>
+      <div class="flex flex-wrap gap-6 justify-center">
+        <div class="bg-white rounded-xl px-4 py-5 flex flex-col items-center shadow min-w-[160px] max-w-[200px] border border-teal-100">
+          <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Discover Scuba" class="w-full rounded-lg mb-3 shadow" />
+          <div class="font-bold mb-1 text-teal-700">Discover Scuba Diving</div>
+          <div class="text-orange-500 text-base mb-1">From €56</div>
+          <button class="bg-gradient-to-r from-teal-200 to-orange-200 text-teal-900 font-bold rounded-lg px-4 py-2 mt-2 hover:from-teal-300 hover:to-orange-300 transition shadow">Book Now</button>
+        </div>
+        <div class="bg-white rounded-xl px-4 py-5 flex flex-col items-center shadow min-w-[160px] max-w-[200px] border border-teal-100">
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" alt="Open Water" class="w-full rounded-lg mb-3 shadow" />
+          <div class="font-bold mb-1 text-teal-700">Open Water Diver</div>
+          <div class="text-orange-500 text-base mb-1">From €320</div>
+          <button class="bg-gradient-to-r from-teal-200 to-orange-200 text-teal-900 font-bold rounded-lg px-4 py-2 mt-2 hover:from-teal-300 hover:to-orange-300 transition shadow">Book Now</button>
+        </div>
+        <div class="bg-white rounded-xl px-4 py-5 flex flex-col items-center shadow min-w-[160px] max-w-[200px] border border-teal-100">
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Advanced" class="w-full rounded-lg mb-3 shadow" />
+          <div class="font-bold mb-1 text-teal-700">Advanced Open Water</div>
+          <div class="text-orange-500 text-base mb-1">From €350</div>
+          <button class="bg-gradient-to-r from-teal-200 to-orange-200 text-teal-900 font-bold rounded-lg px-4 py-2 mt-2 hover:from-teal-300 hover:to-orange-300 transition shadow">Book Now</button>
+        </div>
+        <div class="bg-white rounded-xl px-4 py-5 flex flex-col items-center shadow min-w-[160px] max-w-[200px] border border-teal-100">
+          <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Rescue" class="w-full rounded-lg mb-3 shadow" />
+          <div class="font-bold mb-1 text-teal-700">Rescue Diver</div>
+          <div class="text-orange-500 text-base mb-1">From €400</div>
+          <button class="bg-gradient-to-r from-teal-200 to-orange-200 text-teal-900 font-bold rounded-lg px-4 py-2 mt-2 hover:from-teal-300 hover:to-orange-300 transition shadow">Book Now</button>
+        </div>
+      </div>
+    </section>
+    <!-- NEWSLETTER/CONTACT -->
+    <section class="w-full bg-white py-10 px-4 text-center">
+      <h2 class="text-xl md:text-2xl font-bold text-orange-300 mb-4">Enjoy our E-books selection to get the best out of your dive trip!</h2>
+      <form class="flex flex-col sm:flex-row justify-center items-center gap-3 mb-6">
+        <input type="email" placeholder="Enter your email here..." required class="px-4 py-2 rounded-full text-black w-60 max-w-full" />
+        <button type="submit" class="bg-orange-300 text-[#181e26] font-bold rounded-full px-6 py-2 hover:bg-orange-200 transition">Get Your E-Book</button>
+      </form>
+      <div class="flex justify-center gap-6 text-2xl mt-4">
+        <a href="#" class="text-orange-300 hover:text-cyan-400"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-orange-300 hover:text-cyan-400"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-orange-300 hover:text-cyan-400"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="text-orange-300 hover:text-cyan-400"><i class="fab fa-twitter"></i></a>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="w-full bg-gradient-to-br from-teal-100 via-white to-orange-100 text-teal-800 py-10 px-4 flex flex-wrap gap-8 justify-between items-start text-sm border-t border-teal-200">
+      <div class="min-w-[180px] max-w-[320px] mb-4">
+        <div class="text-lg font-bold text-teal-700 mb-2"> Horizon</div>
+        Established in 2009, with the desire to share or make discover our passion for the underwater world. Everyone should be able to experience scuba diving once in their life.
+      </div>
+      <div class="min-w-[180px] max-w-[320px] mb-4">
+        <strong>Contact</strong><br/>
+        info@diveconcepts.com<br/>
+        +62 (0) 812 3844 5440
+      </div>
+      <div class="min-w-[180px] max-w-[320px] mb-4">
+        <strong>Free Nitrox All Around Horizon</strong><br/>
+        Nitrox is a mix of air richer in Oxygen, normally the air we are breathing is composed of 21% of oxygen, which is the equivalent of Nitrox 21. For Scuba diving the most common mixes used are...<br/>
+        <a href="#" class="text-teal-600">Read more &gt;</a>
+      </div>
+      <div class="flex items-center gap-2 mb-4">
+        <img src="public/images/logo.jpg" alt="Badge" class="h-9 rounded-full shadow" />
+        <img src="public/images/ssi.png" alt="SSI" class="h-9 bg-white rounded shadow" />
+      </div>
+    </footer>
   </body>
 </html>
